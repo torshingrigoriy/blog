@@ -1,1 +1,108 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.snow.css';
+* {
+  font-family: 'Besley', serif;
+  box-sizing: border-box;
+}
+ul, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+body {
+  background: #03ffe8;
+}
+body, html {
+  padding: 0;
+  margin: 0;
+}
+.navbar {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px;
+}
+.container {
+  padding: 0 10px;
+  max-width: 1200px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+}
+.button {
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.button:hover {
+  background: #000;
+  color: #fff;
+  transition: 0.3s all ease-in;
+}
+.button-dark {
+  background: #000;
+  color: #fff;
+}
+.button-dark:hover {
+  background: #fff;
+  color: #000;
+}
+.card-style {
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 1px 1px 5px 1px #4f4b4b;
+}
+
+.alert {
+  color: #f95252;
+  border: 2px solid #f95252;
+}
+.info {
+  color: #000;
+  border: 2px solid #0d497a;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.input input {
+  border: 2px solid #001fff;
+}
+.input.invalid input{
+  background: #e83060;
+}
+.button-circle {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #001fff;
+}
+.validation {
+  margin-top: 5px;
+  line-height: 1;
+}
+.notification {
+  position: absolute;
+  padding: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+  background: #fff;
+  box-shadow: 0 0 15px 5px #fff;
+}

@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  background: #b1a472;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #acacac;
+  margin-bottom: 5px;
+}
+.content {
+  background: #fff;
+}
