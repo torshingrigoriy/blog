@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="logo">Admin page</div>
+  <div class="menu" *ngIf="_auth.isAuthenticated()">
+    <ul>
+      <li><a routerLinkActive="active"
+             [routerLink]="['/admin', 'dashboard']">Главная</a></li>
+      <li><a routerLinkActive="active"
+             [routerLink]="['/admin', 'create']">Создать</a></li>
+      <li><a routerLinkActive="active"
+             (click)="logout($event)"
+      href="#">Выход</a></li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <app-alert></app-alert>
+  <router-outlet></router-outlet>
+
+</div>

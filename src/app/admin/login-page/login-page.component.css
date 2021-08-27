@@ -1,0 +1,18 @@
+.form {
+  border: 3px solid #001fff;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: 50px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffca00;
+}
+.form-container {
+  width: 200px;
+}
+.title {
+  text-align: center;
+  font-size: 18px;
+}

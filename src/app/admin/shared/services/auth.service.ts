@@ -4,6 +4,7 @@ import {FBAuthResponse, User} from "../../../shared/interfaces";
 import {Observable, Subject, throwError} from "rxjs";
 import {environment} from "../../../../environments/environment";
 import {catchError, tap} from "rxjs/operators";
+import {AlertService} from "./alert.service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,10 @@ import {catchError, tap} from "rxjs/operators";
 export class AuthService {
   public error$: Subject<string> = new Subject<string>();
 
-  constructor(private _http: HttpClient) {
+  constructor(
+    private _http: HttpClient,
+    private _alertService: AlertService
+  ) {
   }
 
   get token(): string {
@@ -44,12 +48,15 @@ export class AuthService {
     const {message} = error.error.error
     switch (message) {
       case 'INVALID_EMAIL' :
+        this._alertService.warning('Неверный эмейл')
         this.error$.next('Неверный эмейл')
         break
       case 'INVALID_PASSWORD' :
+        this._alertService.danger('Неверный пароль')
         this.error$.next('Неверный пароль')
         break
       case 'EMAIL_NOT_FOUND' :
+        this._alertService.success('Эмейл не найден')
         this.error$.next('Эмейл не найден')
         break
     }

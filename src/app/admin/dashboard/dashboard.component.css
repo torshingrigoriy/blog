@@ -1,0 +1,45 @@
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #fff;
+}
+table {
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+}
+td, th {
+  text-align: left;
+  border: 1px solid #000;
+  padding: 0 5px;
+}
+button {
+  border-radius: 5px;
+  color: #fff;
+  border: 1px solid;
+}
+button:hover {
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s all ease-in;
+}
+.edit {
+  background: #d6930f;
+  border-color: #d6930f;
+  margin-right: 10px;
+}
+.delete {
+  background: #b70505;
+  border-color: #b70505;
+}
+.search {
+  margin-bottom: 20px;
+}
+.search input {
+  width: 100%;
+  border: none;
+}

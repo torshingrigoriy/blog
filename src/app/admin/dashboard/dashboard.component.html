@@ -1,0 +1,34 @@
+<div class="title">
+  Список постов
+</div>
+<div class="search">
+  <input type="text" placeholder="Найти пост" [(ngModel)]="searchString">
+</div>
+<div *ngIf="posts.length; else loader">
+  <table>
+    <thead>
+    <tr>
+      <th>№</th>
+      <th>Автор</th>
+      <th>Название</th>
+      <th>Дата</th>
+      <th>Действие</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let post of posts | searchPosts:searchString; let idx = index">
+      <td>{{idx+1}}</td>
+      <td>{{post.author}}</td>
+      <td>{{post.name}}</td>
+      <td>{{post.date | date: 'medium': null:'ru'}}</td>
+      <td>
+        <button class="edit" [routerLink]="['/admin', 'post', post.id, 'edit']" type="button">Изменить</button>
+        <button class="delete" (click)="remove(post.id)" type="button">Удалить</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #loader>
+  Загрузка...
+</ng-template>

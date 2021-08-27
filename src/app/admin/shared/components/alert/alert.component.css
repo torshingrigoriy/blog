@@ -1,0 +1,9 @@
+.success {
+  background: green;
+}
+.warning {
+  background: orange;
+}
+.danger {
+  background: red;
+}

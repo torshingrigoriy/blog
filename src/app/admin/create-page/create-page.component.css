@@ -1,0 +1,15 @@
+.title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+.form {
+  width: 300px;
+  margin: 50px auto 0;
+  padding: 20px;
+  border: 1px dashed #000;
+}
+#content {
+  background: #fff;
+  border: 2px solid #001fff;
+}

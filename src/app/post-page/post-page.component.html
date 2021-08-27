@@ -1,13 +1,16 @@
-<div class="post">
+<div class="post" *ngIf="post$ | async as post; else loading">
   <div class="header card-style">
-    <h1>Post header</h1>
+    <h1>{{post.name}}</h1>
     <button routerLink="/" class="button">Go home</button>
   </div>
   <div class="info card-style">
-    <strong>Author</strong>
-    <small>20.02.2021</small>
+    <strong>{{post.author}}</strong>
+    <small>{{post.date | date: 'medium': null : 'ru'}}</small>
   </div>
   <div class="content card-style">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur doloribus eaque, earum eos esse eum facilis illum ipsum maxime quaerat quo quos sed voluptates voluptatibus. Aliquid asperiores debitis doloremque laborum minima molestiae nam natus nostrum temporibus vero. Aliquid consectetur cum inventore ipsa molestiae nesciunt perspiciatis provident reprehenderit ullam. Soluta.
+    <quill-view-html [content]="post.content"></quill-view-html>
   </div>
 </div>
+<ng-template #loading>
+  Загружается...
+</ng-template>

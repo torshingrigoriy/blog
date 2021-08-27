@@ -1,0 +1,37 @@
+<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="title">
+    Создать новый пост
+  </div>
+
+  <div class="input" [ngClass]="{invalid: form.get('name').touched && form.get('name').invalid}">
+    <label for="name"><b>Название</b></label>
+    <input formControlName="name" id="name" type="text">
+    <div class="validation"
+         *ngIf="form.get('name').touched && form.get('name').invalid">
+        <span *ngIf="form.get('name').errors.required">
+          Обязательное поле для ввода
+        </span>
+    </div>
+  </div>
+  <div class="input" [ngClass]="{invalid: form.get('content').touched && form.get('content').invalid}">
+    <label for="content"><b>Содержание</b></label>
+    <quill-editor id="content" formControlName="content"></quill-editor>
+    <div class="validation"
+         *ngIf="form.get('content').touched && form.get('content').invalid">
+        <span *ngIf="form.get('content').errors.required">
+          Обязательное поле для ввода
+        </span>
+    </div>
+  </div>
+  <div class="input" [ngClass]="{invalid: form.get('author').touched && form.get('author').invalid}">
+    <label for="author"><b>Автор</b></label>
+    <input formControlName="author" id="author" type="text">
+    <div class="validation"
+         *ngIf="form.get('author').touched && form.get('author').invalid">
+        <span *ngIf="form.get('author').errors.required">
+          Обязательное поле для ввода
+        </span>
+    </div>
+  </div>
+  <button type="submit" [disabled]="form.invalid || submitted">Создать</button>
+</form>
